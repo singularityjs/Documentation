@@ -24,7 +24,7 @@ var _App;
             var self = this;
             this.setState({load: true});
             $.ajax({
-                url: '/blog',
+                url: '/document/data/',
                 method: 'GET'
             }).then(function(msg) {
                 self.setState({data: msg, load: false});
