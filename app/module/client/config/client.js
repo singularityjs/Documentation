@@ -4,8 +4,8 @@ module.exports = function() {
 	return ([
 		{
 			method: ['get'],
-			path: '/client',
-			priority: 3,
+			path: '/',
+			priority: 2,
 			action: {
 				controller: 'client',
 				method: 'index'
