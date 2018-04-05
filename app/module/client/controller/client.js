@@ -8,7 +8,7 @@ module.exports = function($) {
 		webapp,
 		placeholder
 	) {
-		
+
 		var obj = function() {
 			this._priority = {
 				'/route.js': 7
@@ -17,7 +17,7 @@ module.exports = function($) {
 		obj.prototype = $.extends('!controller', {
 			index: function() {
 				return (webapp.main({
-					header: ['<title>Auth</title>'],
+					header: ['<title>Singularity</title>'],
 					main: '/client/main.js'
 				}));
 			},
@@ -42,12 +42,7 @@ module.exports = function($) {
 			},
 
 			fav: function() {
-				const self = this;
-				return (placeholder.get('64x64').then(function(path) {
-					return (self.file({contentDisposition: 'inline', path: $.path(path)}));
-				}, function() {
-					return (self.res().status(404).data({error: 'error creating placeholder image'}));
-				}));
+				return (this.file({contentDisposition: 'inline', path: $.path('module!/public/semantic/logo.png')}));
 			}
 		});
 
